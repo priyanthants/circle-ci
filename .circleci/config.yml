@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm install typescript
+      - run: npm run test
       - run: npm run build       
 workflows:
   version: 2
