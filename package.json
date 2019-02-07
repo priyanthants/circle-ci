@@ -9,6 +9,9 @@
     "build": "npm run tsc && npm run serve",
     "test": "mocha -r ts-node/register app/test/*.spec.ts"
   },
+  "pre-commit": [
+    "test"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -16,6 +19,7 @@
     "@types/mocha": "^5.2.5",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2",
     "ts-node": "^8.0.1",
     "typescript": "^3.2.4"
   },
