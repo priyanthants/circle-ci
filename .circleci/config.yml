@@ -12,6 +12,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Testing......"
+      - run: sleep 15 
   deploy:
     docker:
       - image: circleci/ruby:2.4.1
@@ -19,8 +20,7 @@ jobs:
       - test
     steps:
       - checkout
-      - run: echo "Deploying....."
-      - run: sleep 5     
+      - run: echo "Deploying....."    
 workflows:
   version: 2
   application_deploy:
