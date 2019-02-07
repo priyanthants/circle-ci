@@ -1,27 +1,16 @@
 version: 2
 jobs:
-  test:
+  build:
     docker:
       - image: circleci/node:8.11.1
     steps:
       - checkout
       - run: npm install
       - run: npm install typescript
-  deploy:
-    docker:
-      - image: circleci/node:7.10
-    requires:
-      - test
-    steps:
-      - checkout
-      - run: npm install typescript
-      - run: npm run build    
+      - run: npm run build       
 workflows:
   version: 2
   application_deploy:
     jobs:
-      - test
-      - deploy:
-            requires:
-              - test
+      - build
        
