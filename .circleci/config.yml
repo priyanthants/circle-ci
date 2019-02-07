@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run: echo "Building......"
+    branches:
+      only:
+        - master
+        - /rc-.*/
   test:
     docker:
       - image: circleci/ruby:2.4.1
