@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Testing......"
-   deploy:
+  deploy:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
@@ -26,4 +26,3 @@ workflows:
       - build
       - test
       - deploy
-      
