@@ -5,7 +5,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "Building....."
+      - run: echo "Building......"
   test:
     docker:
       - image: circleci/ruby:2.4.1
