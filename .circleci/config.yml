@@ -6,12 +6,18 @@ jobs:
     steps:
       - checkout
       - run: echo "Building....."
+    branches:
+      only:
+        - master
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "Testing......"
+    branches:
+      ignore:
+        - master
   deploy:
     docker:
       - image: circleci/ruby:2.4.1
