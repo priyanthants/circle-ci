@@ -1,34 +1,23 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "Building......"
   test:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node:7.10
     steps:
       - checkout
-      - run: echo "Testing......"
-      - run: sleep 15 
+      - run: npm install
   deploy:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node:7.10
     requires:
       - test
     steps:
       - checkout
-      - run: echo "Deploying....."    
+      - run: npm run buld    
 workflows:
   version: 2
   application_deploy:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
       - test
       - deploy:
             requires:
