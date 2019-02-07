@@ -13,7 +13,7 @@ jobs:
       - test
     steps:
       - checkout
-      - run: npm run buld    
+      - run: npm run build    
 workflows:
   version: 2
   application_deploy:
