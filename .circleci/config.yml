@@ -10,10 +10,20 @@ jobs:
       - run: npm install typescript
       - run: npm run test
       - run: npm run build
+  test:
+    docker:
+      - image: circleci/node:8.11.1
+     requires:
+      - build
+    steps:  
+      - checkout
       - run: curl -i http://localhost:3000/      
 workflows:
   version: 2
   application_deploy:
     jobs:
       - build
+      - test:
+          requires:
+            - build
        
