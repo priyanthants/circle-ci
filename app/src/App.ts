@@ -6,6 +6,9 @@ class App {
 
   constructor() {
     this.app = express();
+    this.app.get('/', (request: express.Request, response: express.Response) => {
+      response.send("Hello World");
+    });
   }
 
   public listen() {
