@@ -9,7 +9,8 @@ jobs:
       - run: npm install
       - run: npm install typescript
       - run: npm run test
-      - run: npm run build      
+      - run: npm run build
+      - run: curl -i http://localhost:3000/      
 workflows:
   version: 2
   application_deploy:
